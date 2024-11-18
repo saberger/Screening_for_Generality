@@ -1,0 +1,13 @@
+name: screening_environment
+channels:
+  - conda-forge
+  - progress
+dependencies:
+  - python=3.7
+  - matplotlib
+  - numpy
+  - pandas
+  - seaborn
+  - openpyxl
+  - pdfplumber
+  - jupyterlab
