@@ -204,7 +204,7 @@ remodeldata("Plate 2", counter)
 # ----------------------------- isolate hits ----------------------------------------
 df = pd.read_excel('output/alldata_3SD.xlsx')
 
-# uncomment to set no-hits to zero instead of removing them entirly
+# uncomment to set no-hits to zero instead of removing them entirely
 #df['Activity Mean'][pd.isna(df['Hit'])] = 0
 #df['Activity SD'][pd.isna(df['Hit'])] = 0
 
