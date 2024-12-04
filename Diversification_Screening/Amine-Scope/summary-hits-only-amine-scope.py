@@ -78,8 +78,10 @@ df = pd.read_excel(outname)
 combinations_to_drop = ['C105–A029', 'C105–A032', 'C105–A033', 'C139–A029', 'C139–A032', 'C139–A033']
 df = df[~df['Combination'].isin(combinations_to_drop)]
 
-df = df[df['Hit'] == 'Hit']
-df.drop('Hit', axis=1, inplace=True)
+#df = df[df['Hit'] == 'Hit']
+#df.drop('Hit', axis=1, inplace=True) uncomment to remove non-hits
+df['Activity [mU/mgCFE]'][pd.isna(df['Hit'])] = 0
+
 
 df.to_excel('output/matrix-amine-hits-only.xlsx', header=False, index=False)
 df.columns = ["Enzyme ID", "Carbonyl ID", "Amine ID", "Lab Journal Code", "Activity [mU/mgCFE]", "Assay Method", "Combination"]
